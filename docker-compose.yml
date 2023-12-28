@@ -1,14 +1,14 @@
 version: "3"
 services:
   apache2host:
-    image: dmitiriy/artem_forever_apache:v1
+    build: apache
     ports:
       - 8000:8000
     networks:
       - Net1
 
   nginx:    
-    image: dmitiriy/artem_forever_nginx:v1
+    build: nginx
     ports:
       - 80:80
       - 443:443
