@@ -6,5 +6,6 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY /html var/www/html
 COPY serv-nginx.conf etc/nginx/conf.d/
 COPY /ssl etc/nginx
+
 EXPOSE 80
 EXPOSE 443

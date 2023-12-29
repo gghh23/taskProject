@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# Network doesn't exist:
-#
-# docker network create -d bridge Net1
+docker network create -d bridge Net1
 
 
 cd 
