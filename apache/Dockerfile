@@ -5,5 +5,4 @@ WORKDIR /
 COPY /apache2 etc/apache2/
 COPY /iphp var/www/html
 
-ENTRYPOINT [ "java", "-jar", '/MyTaskJenkins18.jar' ]
 EXPOSE 8000
