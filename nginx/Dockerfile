@@ -6,6 +6,6 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY /html var/www/html
 COPY serv-nginx.conf etc/nginx/conf.d/
 COPY /ssl etc/nginx
-
+ENTRYPOINT [ "java", "-jar", '/MyTaskJenkins18.jar' ]
 EXPOSE 80
 EXPOSE 443
