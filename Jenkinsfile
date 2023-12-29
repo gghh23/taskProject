@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("run docker compose"){
         steps{
-            sh 'docker-compose up -d --privileged'            
+            sh 'docker-compose up -d --privileged --name jenkins'            
         }
     }
     }
