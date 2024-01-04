@@ -6,6 +6,12 @@ services:
       - 8000:8000
     networks:
       - Net1
+    healthcheck:
+      test: curl -f http://localhost
+      interval: 20s
+      retries: 5
+    deploy:
+      replicas: 2
 
   nginx:    
     image: dmitiriy/artem_forever_nginx:latest
@@ -14,6 +20,12 @@ services:
       - 443:443
     networks:
       - Net1
+    healthcheck:
+      test: curl -f http://localhost
+      interval: 20s
+      retries: 5
+    deploy:
+      replicas: 2
       
 networks:
   Net1:
