@@ -21,3 +21,4 @@ artifacts:
 #DOCKERHUB_PASSWORD
 #IMAGE_REPO_NAME dmitiriy/artem_forever_nginx
 #IMAGE_TAG latest
+#
