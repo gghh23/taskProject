@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+pre_build:
+    commands:
+      - docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
+          
+build:
+    commands:
+      - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .
+      - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $IMAGE_REPO_NAME:$IMAGE_TAG
+post_build:
+    commands:
+      - docker push $IMAGE_REPO_NAME:$IMAGE_TAG
+      - printf '[{"name":"nginx","imageUri":"dmitiriy/artem_forever_nginx"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+artifacts:
+    files: imagedefinitions.json
