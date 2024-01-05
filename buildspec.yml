@@ -12,6 +12,6 @@ build:
 post_build:
     commands:
       - docker push $IMAGE_REPO_NAME:$IMAGE_TAG
-      - printf '[{"name":"nginx","imageUri":"dmitiriy/artem_forever_nginx"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+      - printf '[{"name":"nginx-task","imageUri":"dmitiriy/artem_forever_nginx","portMappings":[{"containerPort":80,"hostPort":80}],"essential":true}]' > imagedefinitions.json
 artifacts:
     files: imagedefinitions.json
