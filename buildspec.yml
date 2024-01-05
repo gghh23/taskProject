@@ -13,8 +13,11 @@ phases:
     commands:
       - docker push $IMAGE_REPO_NAME:$IMAGE_TAG
       - printf '[{"name":"nignx-19","imageUri":"dmitiriy/artem_forever_nginx","portMappings":[{"containerPort":80,"hostPort":80}],"essential":true}]' > imagedefinitions.json
+      - printf '[{"name":"apache","imageUri":"dmitiriy/artem_forever_apache","portMappings":[{"containerPort":8000,"hostPort":8000}],"essential":true}]' > imagedefinitions_apache.json
 artifacts:
-    files: imagedefinitions.json
+    files: 
+      - imagedefinitions.json
+      - imagedefinitions_apache.json
 
 
 #DOCKERHUB_USERNAME dmitiriy
